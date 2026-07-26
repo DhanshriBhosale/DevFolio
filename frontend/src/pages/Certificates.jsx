@@ -14,7 +14,7 @@ function Certificates() {
     try {
 
       const res = await axios.get(
-        "http://localhost:8080/api/certificates"
+        "https://devfolio-backend-production-0511.up.railway.app/api/certificates"
       );
 
       setCertificates(res.data);
