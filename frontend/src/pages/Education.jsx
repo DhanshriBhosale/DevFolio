@@ -14,7 +14,7 @@ function Education() {
     try {
 
       const res = await axios.get(
-        "http://localhost:8080/api/education"
+        "https://devfolio-backend-production-0511.up.railway.app/api/education"
       );
 
       setEducations(res.data);
