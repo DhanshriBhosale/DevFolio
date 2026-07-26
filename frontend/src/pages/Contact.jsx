@@ -21,7 +21,7 @@ function Contact() {
   const loadContact = async () => {
     try {
 
-      const res = await axios.get("http://localhost:8080/api/contact");
+      const res = await axios.get("https://devfolio-backend-production-0511.up.railway.app/api/contact");
 
       if (res.data.length > 0) {
         setContact(res.data[0]);
