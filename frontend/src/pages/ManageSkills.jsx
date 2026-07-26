@@ -20,7 +20,7 @@ function ManageSkills() {
 
   const loadSkills = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/skills");
+      const res = await axios.get("https://devfolio-backend-production-0511.up.railway.app/api/skills");
       setSkills(res.data);
     } catch (err) {
       console.log(err);
@@ -37,7 +37,7 @@ function ManageSkills() {
       if (editingId) {
 
         await axios.put(
-          `http://localhost:8080/api/skills/${editingId}`,
+          `https://devfolio-backend-production-0511.up.railway.app/api/skills/${editingId}`,
           {
             name: skill,
           }
@@ -48,7 +48,7 @@ function ManageSkills() {
       } else {
 
         await axios.post(
-          "http://localhost:8080/api/skills",
+          "https://devfolio-backend-production-0511.up.railway.app/api/skills",
           {
             name: skill,
           }
@@ -81,7 +81,7 @@ function ManageSkills() {
     try {
 
       await axios.delete(
-        `http://localhost:8080/api/skills/${id}`
+        `https://devfolio-backend-production-0511.up.railway.app/api/skills/${id}`
       );
 
       loadSkills();
