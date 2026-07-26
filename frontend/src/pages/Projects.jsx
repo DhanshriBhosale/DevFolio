@@ -14,7 +14,7 @@ function Projects() {
     try {
 
       const res = await axios.get(
-        "http://localhost:8080/api/projects"
+        "https://devfolio-backend-production-0511.up.railway.app/api/projects"
       );
 
       setProjects(res.data);
