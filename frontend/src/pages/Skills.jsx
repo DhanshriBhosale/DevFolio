@@ -12,7 +12,7 @@ function Skills() {
 
   const loadSkills = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/skills");
+      const res = await axios.get("https://devfolio-backend-production-0511.up.railway.app/api/skills");
       setSkills(res.data);
     } catch (err) {
       console.log(err);
