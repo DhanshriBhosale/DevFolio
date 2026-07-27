@@ -110,91 +110,79 @@ function Contact() {
 
   }
 
-  return (
+return (
 
-    <section className="min-h-screen px-4 sm:px-6 lg:px-10 py-20">
+  <section className="min-h-screen px-4 sm:px-6 lg:px-10 py-20 flex items-center justify-center">
 
-      <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-bold text-center mb-10">
-        Contact Me
-      </h1>
+```
+<div className="w-full max-w-3xl bg-slate-900 border border-slate-700 rounded-2xl p-6 md:p-10">
 
-      <div className="w-full max-w-5xl mx-auto bg-slate-900 border border-slate-700 rounded-2xl p-6 md:p-10">
+  <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-bold text-center mb-10">
+    Contact Me
+  </h1>
 
-        <div className="grid grid-cols-1 gap-5">
+  <form
+    onSubmit={sendMessage}
+    className="space-y-5"
+  >
 
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      value={form.name}
+      onChange={handleChange}
+      className="w-full p-4 rounded-lg bg-slate-800 border border-slate-700 text-white outline-none focus:border-cyan-400"
+      required
+    />
 
-        {/* Contact Form */}
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      value={form.email}
+      onChange={handleChange}
+      className="w-full p-4 rounded-lg bg-slate-800 border border-slate-700 text-white outline-none focus:border-cyan-400"
+      required
+    />
 
-        <div className="mt-10 bg-slate-800 rounded-2xl p-6">
+    <input
+      type="text"
+      name="subject"
+      placeholder="Subject"
+      value={form.subject}
+      onChange={handleChange}
+      className="w-full p-4 rounded-lg bg-slate-800 border border-slate-700 text-white outline-none focus:border-cyan-400"
+      required
+    />
 
-          <h2 className="text-3xl font-bold text-cyan-400 mb-6">
-            Send Me a Message
-          </h2>
+    <textarea
+      rows="6"
+      name="message"
+      placeholder="Write your message..."
+      value={form.message}
+      onChange={handleChange}
+      className="w-full p-4 rounded-lg bg-slate-800 border border-slate-700 text-white outline-none focus:border-cyan-400 resize-none"
+      required
+    />
 
-          <form
-            onSubmit={sendMessage}
-            className="space-y-5"
-          >
+    <button
+      type="submit"
+      disabled={sending}
+      className="w-full py-4 rounded-lg bg-cyan-500 hover:bg-cyan-600 disabled:bg-gray-600 text-white font-bold duration-300"
+    >
+      {sending ? "Sending..." : "Send Message"}
+    </button>
 
-                        <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={form.name}
-              onChange={handleChange}
-              className="w-full p-4 rounded-lg bg-slate-900 border border-slate-700 text-white outline-none focus:border-cyan-400"
-              required
-            />
+  </form>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={form.email}
-              onChange={handleChange}
-              className="w-full p-4 rounded-lg bg-slate-900 border border-slate-700 text-white outline-none focus:border-cyan-400"
-              required
-            />
+</div>
+```
 
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              value={form.subject}
-              onChange={handleChange}
-              className="w-full p-4 rounded-lg bg-slate-900 border border-slate-700 text-white outline-none focus:border-cyan-400"
-              required
-            />
+  </section>
 
-            <textarea
-              rows="6"
-              name="message"
-              placeholder="Write your message..."
-              value={form.message}
-              onChange={handleChange}
-              className="w-full p-4 rounded-lg bg-slate-900 border border-slate-700 text-white outline-none focus:border-cyan-400 resize-none"
-              required
-            />
-
-            <button
-              type="submit"
-              disabled={sending}
-              className="w-full py-4 rounded-lg bg-cyan-500 hover:bg-cyan-600 disabled:bg-gray-600 text-white font-bold duration-300"
-            >
-              {sending ? "Sending..." : "Send Message"}
-            </button>
-
-          </form>
-
-        </div>
-              </div>
-
-    </section>
-
-  );
+);
 
 }
 
 export default Contact;
-
-          
