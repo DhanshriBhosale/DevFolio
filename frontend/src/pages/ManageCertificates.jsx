@@ -13,11 +13,12 @@ function ManageCertificates() {
   const [certificates, setCertificates] = useState([]);
 
   const [certificate, setCertificate] = useState({
-    title: "",
-    issuer: "",
-    year: "",
-    certificateLink: "",
-  });
+  title: "",
+  issuer: "",
+  year: "",
+  image: "",
+  certificateLink: "",
+});
 
   const [editingId, setEditingId] = useState(null);
 
@@ -44,6 +45,37 @@ function ManageCertificates() {
   };
 
 
+  const handleImage = async (e) => {
+  const file = e.target.files[0];
+
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  try {
+    const res = await axios.post(
+      "https://devfolio-backend-production-0511.up.railway.app/api/upload",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    setCertificate((prev) => ({
+      ...prev,
+      image: res.data,
+    }));
+
+    alert("Image Uploaded Successfully");
+
+  } catch (err) {
+    console.log(err);
+    alert("Image Upload Failed");
+  }
+};
 
 
   const handleCertificate = async (e) => {
@@ -102,11 +134,12 @@ function ManageCertificates() {
       }
 
       setCertificate({
-        title: "",
-        issuer: "",
-        year: "",
-        certificateLink: "",
-      });
+  title: "",
+  issuer: "",
+  year: "",
+  image: "",
+  certificateLink: "",
+});
 
       setEditingId(null);
 
@@ -120,12 +153,13 @@ function ManageCertificates() {
 
   const editCertificate = (item) => {
 
-    setCertificate({
-      title: item.title,
-      issuer: item.issuer,
-      year: item.year,
-      certificateLink: item.certificateLink,
-    });
+   setCertificate({
+  title: item.title,
+  issuer: item.issuer,
+  year: item.year,
+  image: item.image,
+  certificateLink: item.certificateLink,
+});
 
     setEditingId(item.id);
   };
@@ -211,9 +245,38 @@ function ManageCertificates() {
               required
             />
 
+
+            <div>
+  <label className="block mb-2 text-sm text-gray-300">
+    Certificate Preview Image
+  </label>
+
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleImage}
+    className="w-full p-4 rounded-lg bg-slate-800"
+  />
+
+  {certificate.image && (
+    <img
+      src={certificate.image}
+      alt="Preview"
+      className="mt-4 h-40 w-full object-cover rounded-lg border border-slate-700"
+    />
+  )}
+</div>
+
+
+
+
+
+
+            
+
            <div>
   <label className="block mb-2 text-sm text-gray-300">
-    Upload Certificate (PDF / Image)
+    Upload Certificate (PDF)
   </label>
 
   <input
