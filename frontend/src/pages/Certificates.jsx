@@ -110,6 +110,11 @@ function Certificates() {
 
                   </div>
 
+                  <img
+   src={certificate.image}
+   alt={certificate.title}
+/>
+
                   <a
                     href={certificate.certificateLink}
                     target="_blank"
