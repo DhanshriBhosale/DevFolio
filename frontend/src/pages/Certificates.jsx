@@ -63,13 +63,9 @@ function Certificates() {
                 className="bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden hover:border-pink-400 hover:-translate-y-2 hover:shadow-lg hover:shadow-pink-500/20 duration-300"
               >
 
-                {certificate.certificateLink && (
-                  <img
-                    src={certificate.certificateLink}
-                    alt={certificate.title}
-                    className="w-full h-52 object-cover"
-                  />
-                )}
+                <div className="h-52 flex items-center justify-center bg-slate-800">
+                  <h2 className="text-5xl">📄</h2>
+                </div>
 
                 <div className="p-6">
 
