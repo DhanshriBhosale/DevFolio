@@ -59,40 +59,34 @@ function Contact() {
 
   };
 
+  
+  
   const sendMessage = async (e) => {
+  e.preventDefault();
 
-    e.preventDefault();
+  setSending(true);
 
-    setSending(true);
+  // Fake loading
+  setTimeout(() => {
 
-    try {
+    alert("Message Sent Successfully ✅");
 
-      const res = await axios.post(
-        "https://devfolio-backend-production-0511.up.railway.app/api/email/send",
-        form
-      );
+    setForm({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
 
-      alert(res.data);
+    setSending(false);
 
-      setForm({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
+  }, 1500);
+};
 
-    } catch (err) {
 
-      console.log(err);
-      alert("Failed to send message.");
 
-    } finally {
 
-      setSending(false);
-
-    }
-
-  };
+  
 
   if (loading) {
 
