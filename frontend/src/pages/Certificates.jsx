@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { FaFilePdf } from "react-icons/fa";
 
 function Certificates() {
 
@@ -13,7 +12,6 @@ function Certificates() {
 
   const loadCertificates = async () => {
     try {
-
       const res = await axios.get(
         "https://devfolio-backend-production-0511.up.railway.app/api/certificates"
       );
@@ -64,25 +62,27 @@ function Certificates() {
                 className="bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden hover:border-pink-500 hover:shadow-xl hover:shadow-pink-500/20 hover:-translate-y-2 duration-300"
               >
 
-                {/* PDF Preview */}
+                {/* Certificate Preview */}
 
-                <div className="h-60 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 flex flex-col justify-center items-center border-b border-slate-700">
+                {certificate.image ? (
 
-                  <div className="bg-red-500 p-6 rounded-full shadow-lg shadow-red-500/40">
+                  <img
+                    src={certificate.image}
+                    alt={certificate.title}
+                    className="w-full h-60 object-cover"
+                  />
 
-                    <FaFilePdf className="text-white text-7xl" />
+                ) : (
+
+                  <div className="h-60 bg-slate-800 flex items-center justify-center">
+
+                    <span className="text-gray-400 text-lg">
+                      No Preview Available
+                    </span>
 
                   </div>
 
-                  <h2 className="mt-5 text-2xl font-bold text-white">
-                    PDF Certificate
-                  </h2>
-
-                  <p className="text-gray-400 mt-2">
-                    Click below to view
-                  </p>
-
-                </div>
+                )}
 
                 {/* Details */}
 
@@ -109,11 +109,6 @@ function Certificates() {
                     </p>
 
                   </div>
-
-                  <img
-   src={certificate.image}
-   alt={certificate.title}
-/>
 
                   <a
                     href={certificate.certificateLink}
