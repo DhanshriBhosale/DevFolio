@@ -7,7 +7,6 @@ function About() {
     name: "",
     profession: "",
     email: "",
-    phone: "",
     location: "",
     bio: "",
   });
@@ -73,10 +72,7 @@ function About() {
               <p className="mt-2 break-all">{about.email || "-"}</p>
             </div>
 
-            <div className="bg-slate-800 rounded-xl p-5">
-              <span className="font-bold text-cyan-400">Phone</span>
-              <p className="mt-2">{about.phone || "-"}</p>
-            </div>
+           
 
             <div className="bg-slate-800 rounded-xl p-5 md:col-span-2">
               <span className="font-bold text-cyan-400">Location</span>
