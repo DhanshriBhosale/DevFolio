@@ -22,7 +22,7 @@ function ManageAbout() {
   const loadAbout = async () => {
     try {
 
-      const res = await axios.get("https://devfolio-backend-production-0511.up.railway.app/api/about");
+      const res = await axios.get("https://devfolio-backend-production-6da2.up.railway.app/api/about");
 
       if (res.data.length > 0) {
         setAbout(res.data[0]);
@@ -48,7 +48,7 @@ function ManageAbout() {
       if (about.id) {
 
         await axios.put(
-          `https://devfolio-backend-production-0511.up.railway.app/api/about/${about.id}`,
+          `https://devfolio-backend-production-6da2.up.railway.app/api/about/${about.id}`,
           about
         );
 
@@ -57,7 +57,7 @@ function ManageAbout() {
       } else {
 
         await axios.post(
-          "https://devfolio-backend-production-0511.up.railway.app/api/about",
+          "https://devfolio-backend-production-6da2.up.railway.app/api/about",
           about
         );
 
