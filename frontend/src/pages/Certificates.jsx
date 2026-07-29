@@ -13,7 +13,7 @@ function Certificates() {
   const loadCertificates = async () => {
     try {
       const res = await axios.get(
-        "https://devfolio-backend-production-0511.up.railway.app/api/certificates"
+        "https://devfolio-backend-production-6da2.up.railway.app/api/certificates"
       );
 
       setCertificates(res.data);
