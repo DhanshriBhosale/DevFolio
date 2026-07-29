@@ -36,10 +36,10 @@ function AdminDashboard() {
         education,
         certificates,
       ] = await Promise.all([
-        axios.get("https://devfolio-backend-production-0511.up.railway.app/api/projects"),
-        axios.get("https://devfolio-backend-production-0511.up.railway.app/api/skills"),
-        axios.get("https://devfolio-backend-production-0511.up.railway.app/api/education"),
-        axios.get("https://devfolio-backend-production-0511.up.railway.app/api/certificates"),
+        axios.get("https://devfolio-backend-production-6da2.up.railway.app/api/projects"),
+        axios.get("https://devfolio-backend-production-6da2.up.railway.app/api/skills"),
+        axios.get("https://devfolio-backend-production-6da2.up.railway.app/api/education"),
+        axios.get("https://devfolio-backend-production-6da2.up.railway.app/api/certificates"),
       ]);
 
       setStats({
