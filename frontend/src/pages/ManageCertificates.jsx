@@ -29,7 +29,7 @@ function ManageCertificates() {
   const loadCertificates = async () => {
     try {
       const res = await axios.get(
-        "https://devfolio-backend-production-0511.up.railway.app/api/certificates"
+        "https://devfolio-backend-production-6da2.up.railway.app/api/certificates"
       );
       setCertificates(res.data);
     } catch (err) {
@@ -55,7 +55,7 @@ function ManageCertificates() {
 
   try {
     const res = await axios.post(
-      "https://devfolio-backend-production-0511.up.railway.app/api/upload",
+      "https://devfolio-backend-production-6da2.up.railway.app/api/upload",
       formData,
       {
         headers: {
@@ -88,7 +88,7 @@ function ManageCertificates() {
 
   try {
     const res = await axios.post(
-      "https://devfolio-backend-production-0511.up.railway.app/api/upload",
+      "https://devfolio-backend-production-6da2.up.railway.app/api/upload",
       formData,
       {
         headers: {
@@ -117,7 +117,7 @@ function ManageCertificates() {
       if (editingId) {
 
         await axios.put(
-          `https://devfolio-backend-production-0511.up.railway.app/api/certificates/${editingId}`,
+          `https://devfolio-backend-production-6da2.up.railway.app/api/certificates/${editingId}`,
           certificate
         );
 
@@ -126,7 +126,7 @@ function ManageCertificates() {
       } else {
 
         await axios.post(
-          "https://devfolio-backend-production-0511.up.railway.app/api/certificates",
+          "https://devfolio-backend-production-6da2.up.railway.app/api/certificates",
           certificate
         );
 
@@ -172,7 +172,7 @@ function ManageCertificates() {
     try {
 
       await axios.delete(
-        `https://devfolio-backend-production-0511.up.railway.app/api/certificates/${id}`
+        `https://devfolio-backend-production-6da2.up.railway.app/api/certificates/${id}`
       );
 
       loadCertificates();
