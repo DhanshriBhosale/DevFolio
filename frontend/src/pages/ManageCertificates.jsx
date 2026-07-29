@@ -16,7 +16,6 @@ function ManageCertificates() {
   title: "",
   issuer: "",
   year: "",
-  image: "",
   certificateLink: "",
 });
 
@@ -43,39 +42,6 @@ function ManageCertificates() {
       [e.target.name]: e.target.value,
     });
   };
-
-
-  const handleImage = async (e) => {
-  const file = e.target.files[0];
-
-  if (!file) return;
-
-  const formData = new FormData();
-  formData.append("file", file);
-
-  try {
-    const res = await axios.post(
-      "https://devfolio-backend-production-6da2.up.railway.app/api/upload",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
-
-    setCertificate((prev) => ({
-      ...prev,
-      image: res.data,
-    }));
-
-    alert("Image Uploaded Successfully");
-
-  } catch (err) {
-    console.log(err);
-    alert("Image Upload Failed");
-  }
-};
 
 
   const handleCertificate = async (e) => {
@@ -137,7 +103,6 @@ function ManageCertificates() {
   title: "",
   issuer: "",
   year: "",
-  image: "",
   certificateLink: "",
 });
 
@@ -157,7 +122,6 @@ function ManageCertificates() {
   title: item.title,
   issuer: item.issuer,
   year: item.year,
-  image: item.image,
   certificateLink: item.certificateLink,
 });
 
@@ -246,28 +210,7 @@ function ManageCertificates() {
             />
 
 
-            <div>
-  <label className="block mb-2 text-sm text-gray-300">
-    Certificate Preview Image
-  </label>
-
-  <input
-    type="file"
-    accept="image/*"
-    onChange={handleImage}
-    className="w-full p-4 rounded-lg bg-slate-800"
-  />
-
-  {certificate.image && (
-    <img
-      src={certificate.image}
-      alt="Preview"
-      className="mt-4 h-40 w-full object-cover rounded-lg border border-slate-700"
-    />
-  )}
-</div>
-
-
+            
 
 
 
