@@ -27,7 +27,7 @@ function ManageEducation() {
 
   const loadEducation = async () => {
     try {
-      const res = await axios.get("https://devfolio-backend-production-0511.up.railway.app/api/education");
+      const res = await axios.get("https://devfolio-backend-production-6da2.up.railway.app/api/education");
       setEducations(res.data);
     } catch (err) {
       console.log(err);
@@ -49,7 +49,7 @@ function ManageEducation() {
       if (editingId) {
 
         await axios.put(
-          `https://devfolio-backend-production-0511.up.railway.app/api/education/${editingId}`,
+          `https://devfolio-backend-production-6da2.up.railway.app/api/education/${editingId}`,
           education
         );
 
@@ -58,7 +58,7 @@ function ManageEducation() {
       } else {
 
         await axios.post(
-          "https://devfolio-backend-production-0511.up.railway.app/api/education",
+          "https://devfolio-backend-production-6da2.up.railway.app/api/education",
           education
         );
 
@@ -102,7 +102,7 @@ function ManageEducation() {
     try {
 
       await axios.delete(
-        `https://devfolio-backend-production-0511.up.railway.app/api/education/${id}`
+        `https://devfolio-backend-production-6da2.up.railway.app/api/education/${id}`
       );
 
       loadEducation();
