@@ -22,7 +22,7 @@ function ManageContact() {
   const loadContact = async () => {
     try {
 
-      const res = await axios.get("https://devfolio-backend-production-0511.up.railway.app/api/contact");
+      const res = await axios.get("https://devfolio-backend-production-6da2.up.railway.app/api/contact");
 
       if (res.data.length > 0) {
         setContact(res.data[0]);
@@ -48,7 +48,7 @@ function ManageContact() {
       if (contact.id) {
 
         await axios.put(
-          `https://devfolio-backend-production-0511.up.railway.app/api/contact/${contact.id}`,
+          `https://devfolio-backend-production-6da2.up.railway.app/api/contact/${contact.id}`,
           contact
         );
 
@@ -57,7 +57,7 @@ function ManageContact() {
       } else {
 
         await axios.post(
-          "https://devfolio-backend-production-0511.up.railway.app/api/contact",
+          "https://devfolio-backend-production-6da2.up.railway.app/api/contact",
           contact
         );
 
