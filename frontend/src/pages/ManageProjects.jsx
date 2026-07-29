@@ -22,7 +22,7 @@ function ManageProjects() {
 
   const loadProjects = async () => {
     try {
-      const res = await axios.get("https://devfolio-backend-production-0511.up.railway.app/api/projects");
+      const res = await axios.get("https://devfolio-backend-production-6da2.up.railway.app/api/projects");
       setProjects(res.data);
     } catch (err) {
       console.log(err);
@@ -49,7 +49,7 @@ function ManageProjects() {
 
   try {
     const res = await axios.post(
-      "https://devfolio-backend-production-0511.up.railway.app/api/upload",
+      "https://devfolio-backend-production-6da2.up.railway.app/api/upload",
       formData,
       {
         headers: {
@@ -80,14 +80,14 @@ function ManageProjects() {
     try {
       if (editingId) {
         await axios.put(
-          `https://devfolio-backend-production-0511.up.railway.app/api/projects/${editingId}`,
+          `https://devfolio-backend-production-6da2.up.railway.app/api/projects/${editingId}`,
           project
         );
 
         alert("Project Updated Successfully");
       } else {
         await axios.post(
-          "https://devfolio-backend-production-0511.up.railway.app/api/projects",
+          "https://devfolio-backend-production-6da2.up.railway.app/api/projects",
           project
         );
 
@@ -141,7 +141,7 @@ function ManageProjects() {
     if (!window.confirm("Delete this project?")) return;
 
     try {
-      await axios.delete(`https://devfolio-backend-production-0511.up.railway.app/api/projects/${id}`);
+      await axios.delete(`https://devfolio-backend-production-6da2.up.railway.app/api/projects/${id}`);
       loadProjects();
     } catch (err) {
       console.log(err);
