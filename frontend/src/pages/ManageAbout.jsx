@@ -10,7 +10,6 @@ function ManageAbout() {
     name: "",
     profession: "",
     email: "",
-    phone: "",
     location: "",
     bio: "",
   });
@@ -133,15 +132,7 @@ function ManageAbout() {
             required
           />
 
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone Number"
-            value={about.phone}
-            onChange={handleChange}
-            className="w-full p-4 rounded-lg bg-slate-800 outline-none"
-            required
-          />
+      
 
           <input
             type="text"
