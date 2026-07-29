@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      await axios.post("https://devfolio-backend-production-0511.up.railway.app/api/admin/register", {
+      await axios.post("https://devfolio-backend-production-6da2.up.railway.app/api/admin/register", {
         username,
         password,
       });
