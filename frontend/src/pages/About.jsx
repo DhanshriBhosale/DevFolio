@@ -21,7 +21,7 @@ function About() {
   const loadAbout = async () => {
     try {
 
-      const res = await axios.get("https://devfolio-backend-production-0511.up.railway.app/api/about");
+      const res = await axios.get("https://devfolio-backend-production-6da2.up.railway.app/api/about");
 
       if (res.data.length > 0) {
         setAbout(res.data[0]);
