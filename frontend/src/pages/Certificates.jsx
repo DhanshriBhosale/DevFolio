@@ -62,27 +62,7 @@ function Certificates() {
                 className="bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden hover:border-pink-500 hover:shadow-xl hover:shadow-pink-500/20 hover:-translate-y-2 duration-300"
               >
 
-                {/* Certificate Preview */}
-
-                {certificate.image ? (
-
-                  <img
-                    src={certificate.image}
-                    alt={certificate.title}
-                    className="w-full h-60 object-cover"
-                  />
-
-                ) : (
-
-                  <div className="h-60 bg-slate-800 flex items-center justify-center">
-
-                    <span className="text-gray-400 text-lg">
-                      No Preview Available
-                    </span>
-
-                  </div>
-
-                )}
+              
 
                 {/* Details */}
 
